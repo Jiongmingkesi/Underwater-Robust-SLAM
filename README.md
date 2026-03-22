@@ -39,7 +39,9 @@ rospack find ORB_SLAM3
 '''
 #🚀 2. Running Examples (Native C++)
 '''
-
+```bash
+## 🚀 2. Running Examples (Native C++)
+./Examples/Monocular-Inertial/mono_inertial_euroc ...
 
 
 
