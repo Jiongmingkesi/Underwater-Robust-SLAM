@@ -36,13 +36,79 @@ rospack find ORB_SLAM3
 ./build_ros.sh
 
 
-'''
-#🚀 2. Running Examples (Native C++)
-'''
 ```
-## 🚀 2. Running Examples (Native C++)
+# 🚀 2. Running Examples (Native C++)
+```
+Monocular-Inertial (EuRoC Dataset)
+./Examples/Monocular-Inertial/mono_inertial_euroc \
+    Vocabulary/voc_binary_tartan_8u_6.bin \
+    Examples/Monocular-Inertial/EuRoC.yaml \
+    <PATH_TO_DATASET>/EuRoC/V2_03 \
+    <YOUR_PATH>/Examples/Monocular-Inertial/EuRoC_TimeStamps/V2_03.txt
+
+
+Stereo-Inertial (EuRoC Dataset)
+./Examples/Stereo-Inertial/stereo_inertial_euroc \
+    Vocabulary/voc_binary_tartan_8u_6.bin \
+    Examples/Stereo-Inertial/EuRoC.yaml \
+    <PATH_TO_DATASET>/EuRoC/V2_03 \
+    <YOUR_PATH>/Examples/Stereo-Inertial/EuRoC_TimeStamps/V203.txt
+
+
+```
+# 🤖 3. Running with ROS
+```
+Step 1: Start ROS Master
+roscore
+
+Step 2: Run SLAM Node
+export ROS_PACKAGE_PATH=<YOUR_PROJECT_PATH>/Examples/ROS:$ROS_PACKAGE_PATH
+
+# For UUV Simulation Dataset (Using SuperPoint-based Vocabulary)
+rosrun ORB_SLAM3 Mono_Inertial ./Vocabulary/6_superpoint_uuv_voc_6layer_K10_1_CV4.bin Examples/Monocular-Inertial/UUV_slam_new.yaml
+
+Step 3: Play Bag File
+
+# Example: USS-2 Underwater Sequence
+rosbag play <PATH_TO_BAG>/uss-2.bag \
+    /D435i_camera/color/image_raw:=/camera/color/image_raw \
+    /example_auv/imu:=/camera/imu
+
+```
+# 📊 4. Evaluation
 ```
 
+We use evo for trajectory accuracy assessment.
+# UUV Dataset Evaluation (TUM Format)
+evo_ape tum uss-2.tum CameraTrajectory.txt -s --align --correct_scale --plot --plot_mode xyz -v --t_offset -0.02
+
+
+```
+# 🤝 Acknowledgments
+```
+Our work is built upon and inspired by the following excellent open-source projects:
+
+ORB_SLAM3
+
+Rover-SLAM
+
+SP-Loop
+
+
+
+```
+# ✍️ Citation
+```
+@ARTICLE{11408052,
+  author={Wang, Jiongming and Wang, Zixuan and Shi, Yefan and Zhang, Wei},
+  journal={IEEE Transactions on Instrumentation and Measurement}, 
+  title={Underwater-Robust SLAM and a Simulation Dataset for UUV SLAM}, 
+  year={2026},
+  volume={75},
+  number={},
+  pages={1-14},
+  keywords={Simultaneous localization and mapping;Feature extraction;Location awareness;Visualization;Optimization;Tracking loops;Trajectory;Computer architecture;Computational modeling;Accuracy;Simultaneous localization and mapping (SLAM);underwater environment;unmanned underwater vehicle (UUV);visual–inertial odometry},
+  doi={10.1109/TIM.2026.3666037}}
 
 
 
