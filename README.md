@@ -44,7 +44,17 @@ Monocular-Inertial (EuRoC Dataset)
     Vocabulary/voc_binary_tartan_8u_6.bin \
     Examples/Monocular-Inertial/EuRoC.yaml \
     <PATH_TO_DATASET>/EuRoC/V2_03 \
-    <YOUR_PATH>/Examples/Monocular-Inertial/EuRoC_TimeStamps/V2_03.txt
+    /Examples/Monocular-Inertial/EuRoC_TimeStamps/V2_03.txt
+
+Monocular-Inertial (Tum Dataset)
+./Examples/Monocular-Inertial/mono_inertial_tum_vi \
+    Vocabulary/voc_binary_tartan_8u_6.bin \
+    Examples/Monocular-Inertial/TUM_512.yaml \
+    <PATH_TO_DATASET>/TUM/VIO/zip文件/dataset-corridor4_512_16/mav0/cam0/data \
+    /Examples/Monocular-Inertial/TUM_TimeStamps/dataset-corridor4_512.txt \
+    /Examples/Monocular-Inertial/TUM_IMU/dataset-corridor4_512.txt \
+    dataset-corridor4_512_monoi
+
 
 
 Stereo-Inertial (EuRoC Dataset)
@@ -52,7 +62,7 @@ Stereo-Inertial (EuRoC Dataset)
     Vocabulary/voc_binary_tartan_8u_6.bin \
     Examples/Stereo-Inertial/EuRoC.yaml \
     <PATH_TO_DATASET>/EuRoC/V2_03 \
-    <YOUR_PATH>/Examples/Stereo-Inertial/EuRoC_TimeStamps/V203.txt
+    /Examples/Stereo-Inertial/EuRoC_TimeStamps/V203.txt
 
 
 ```
