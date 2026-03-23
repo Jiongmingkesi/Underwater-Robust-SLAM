@@ -80,8 +80,12 @@ rosbag play <PATH_TO_BAG>/uss-2.bag \
 
 We use evo for trajectory accuracy assessment.
 # UUV Dataset Evaluation (TUM Format)
+evo_rpe tum uss-2.tum CameraTrajectory.txt -as --delta 1 --delta_unit m --plot --plot_mode xyz --t_offset -0.02
 evo_ape tum uss-2.tum CameraTrajectory.txt -s --align --correct_scale --plot --plot_mode xyz -v --t_offset -0.02
 
+# Euroc Evaluation (Euroc Format)
+evo_rpe euroc data.csv CameraTrajectory.txt -as --delta 1 --delta_unit m --plot --plot_mode xyz 
+evo_ape euroc data.csv CameraTrajectory.txt -s --align --correct_scale --plot --plot_mode xyz -v
 
 ```
 # 🤝 Acknowledgments
